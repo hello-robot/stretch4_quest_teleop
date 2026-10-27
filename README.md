@@ -114,3 +114,7 @@ The script keeps waiting and prints what's wrong and how to fix it. The usual ca
 | Lease conflict on start | Another program is controlling the robot through the server; close it |
 
 Run any script with `--help` to see all options. Ctrl-C stops the robot and exits.
+
+## License
+
+Apache License 2.0 - see [LICENSE](LICENSE). Copyright 2026 Hello Robot Inc.
