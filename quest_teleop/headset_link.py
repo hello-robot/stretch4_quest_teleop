@@ -12,7 +12,7 @@ class HeadsetLink:
 
     LIVE, STALE, DOWN = "live", "stale", "down"
     APP = "com.rail.oculus.teleop"
-    FORK_URL = "https://github.com/jborbik/oculus_reader"
+    FORK_URL = "https://github.com/hello-shaumik/oculus_reader"
 
     def __init__(self, ip_address=None, stale_after=1.0, reconnect_after=3.0,
                  on_event=None):
@@ -151,8 +151,8 @@ class HeadsetLink:
                 problem("The headset app is behind another screen -- "
                         "bringing it back.",
                         "If it stays hidden, put the headset on and close any "
-                        "menu or pop-up until you see the green-and-blue "
-                        "tiles.",
+                        "menu or pop-up until you see the room with no "
+                        "menus.",
                         "Avoid the Meta button while driving.")
 
         with self._lock:
@@ -190,10 +190,10 @@ class HeadsetLink:
                 self._local_apk_size = None
             git_cfg = os.path.join(os.path.dirname(pkg), ".git", "config")
             if (os.path.exists(git_cfg)
-                    and "jborbik" not in open(git_cfg).read()):
+                    and "hello-shaumik/oculus_reader" not in open(git_cfg).read()):
                 self._local_apk_problems += [
                     f"- oculus_reader at {os.path.dirname(pkg)} isn't the "
-                    f"jborbik fork, whose app has Quest 3 support.",
+                    f"hello-shaumik fork, whose app has passthrough.",
                     f"    -> Reinstall from {self.FORK_URL} (see README "
                     f"Install), then replace the headset app."]
         out.extend(self._local_apk_problems)

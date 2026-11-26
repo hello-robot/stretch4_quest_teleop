@@ -1,0 +1,3 @@
+[submodule "third_party/stretch4_dex_teleop"]
+	path = third_party/stretch4_dex_teleop
+	url = https://github.com/hello-robot/stretch4_dex_teleop.git
